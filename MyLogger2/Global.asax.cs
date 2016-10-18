@@ -12,6 +12,7 @@ namespace MyLogger2
     {
         protected void Application_Start()
         {
+            LoggingUtility.LogInfoEvent("App Start");
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

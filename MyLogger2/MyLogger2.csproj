@@ -49,6 +49,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.3.10\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -173,8 +177,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="LoggingUtility.cs" />
+    <Compile Include="Migrations\201610181818437_InitialMigration.cs" />
+    <Compile Include="Migrations\201610181818437_InitialMigration.Designer.cs">
+      <DependentUpon>201610181818437_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610181905538_AddLogEntriesTable.cs" />
+    <Compile Include="Migrations\201610181905538_AddLogEntriesTable.Designer.cs">
+      <DependentUpon>201610181905538_AddLogEntriesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LogEntry.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -245,6 +260,14 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201610181818437_InitialMigration.resx">
+      <DependentUpon>201610181818437_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610181905538_AddLogEntriesTable.resx">
+      <DependentUpon>201610181905538_AddLogEntriesTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

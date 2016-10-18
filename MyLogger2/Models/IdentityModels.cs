@@ -29,5 +29,9 @@ namespace MyLogger2.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<LogEntry> LogEntries { get; set; }
+
+
     }
 }
